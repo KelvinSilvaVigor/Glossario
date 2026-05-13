@@ -1,26 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Glossário Power BI</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
-  <h1>📘 Glossário Power BI</h1>
+  <header class="hero">
 
-  <input type="text" placeholder="Buscar termo...">
+    <div>
+      <p class="tag">📘 Base de conhecimento Power BI</p>
 
-  <div class="container">
+      <h1>Glossário Power BI</h1>
 
-    <div class="card">
-      <h2>CALCULATE</h2>
-      <p>Modifica o contexto de filtro.</p>
+      <p class="subtitle">
+        Conceitos, funções DAX, modelagem, Power Query e boas práticas.
+      </p>
     </div>
 
-    <div class="card">
-      <h2>RELATED</h2>
-      <p>Busca valores relacionados entre tabelas.</p>
-    </div>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Buscar termo..."
+    />
 
-    <div class="card">
-      <h2>SUMX</h2>
-      <p>Executa soma linha por linha.</p>
-    </div>
+  </header>
 
-  </div>
+  <main>
+
+    <section class="filters">
+
+      <button class="filter active">Todos</button>
+      <button class="filter">DAX</button>
+      <button class="filter">Modelagem</button>
+      <button class="filter">Power Query</button>
+      <button class="filter">Visualização</button>
+
+    </section>
+
+    <section class="grid">
+
+      <!-- CARD -->
+
+      <article class="card">
+
+        <div class="card-top">
+
+          <span class="category dax">DAX</span>
+
+          <button class="copy-btn">
+            📋 Copiar
+          </button>
+
+        </div>
+
+        <h2>CALCULATE</h2>
+
+        <p class="description">
+          Modifica o contexto de filtro para avaliar expressões.
+        </p>
+
+        <div class="example">
+
+          <span>Exemplo</span>
+
+          <code>
+            CALCULATE(SUM(Vendas[Valor]))
+          </code>
+
+        </div>
+
+      </article>
+
+      <!-- CARD -->
+
+      <article class="card">
+
+        <div class="card-top">
+
+          <span class="category modelagem">
+            Modelagem
+          </span>
+
+        </div>
+
+        <h2>Star Schema</h2>
+
+        <p class="description">
+          Modelo dimensional baseado em tabela fato e dimensões.
+        </p>
+
+        <div class="example">
+
+          <span>Exemplo</span>
+
+          <code>
+            FatoVendas → DimProduto
+          </code>
+
+        </div>
+
+      </article>
+
+      <!-- CARD -->
+
+      <article class="card">
+
+        <div class="card-top">
+
+          <span class="category pq">
+            Power Query
+          </span>
+
+        </div>
+
+        <h2>Merge Queries</h2>
+
+        <p class="description">
+          Une tabelas usando colunas em comum.
+        </p>
+
+        <div class="example">
+
+          <span>Exemplo</span>
+
+          <code>
+            Clientes + Pedidos
+          </code>
+
+        </div>
+
+      </article>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 
 </body>
+</html>
