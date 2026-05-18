@@ -242,3 +242,18 @@ code {
   }
 
 }
+/* NAV CARD */
+
+.nav-card {
+  text-decoration: none;
+  color: white;
+}
+
+.card-icon {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.nav-card h2 {
+  margin-bottom: 16px;
+}
