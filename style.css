@@ -257,3 +257,74 @@ code {
 .nav-card h2 {
   margin-bottom: 16px;
 }
+/* DOC PAGE */
+
+.doc-page {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.back-btn {
+  display: inline-block;
+
+  margin-bottom: 30px;
+
+  color: #60a5fa;
+
+  text-decoration: none;
+}
+
+.doc-card {
+
+  background: linear-gradient(
+    145deg,
+    #111827,
+    #172033
+  );
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  margin-bottom: 24px;
+
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.info-group {
+
+  display: flex;
+
+  gap: 16px;
+
+  flex-wrap: wrap;
+
+  margin: 20px 0;
+}
+
+.info-item {
+
+  background: #0b1220;
+
+  padding: 14px 18px;
+
+  border-radius: 12px;
+
+  color: #cbd5e1;
+}
+
+.doc-card h2 {
+  margin-bottom: 20px;
+}
+
+.doc-card h3 {
+  margin: 24px 0 12px;
+}
+
+.doc-card ul {
+  padding-left: 20px;
+}
+
+.doc-card li {
+  margin-bottom: 10px;
+}
