@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tabelas</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <main class="doc-page">
+
+    <a href="index.html" class="back-btn">
+      ← Voltar
+    </a>
+
+    <h1>📦 Tabelas</h1>
+
+    <p class="subtitle">
+      Estrutura das tabelas utilizadas no modelo Power BI.
+    </p>
+
+    <!-- TABELA -->
+
+    <section class="doc-card">
+
+      <h2>DIM_CLIENTES</h2>
+
+      <div class="info-group">
+
+        <div class="info-item">
+          <strong>Fonte:</strong>
+          ERP Sankhya
+        </div>
+
+        <div class="info-item">
+          <strong>Atualização:</strong>
+          Diária
+        </div>
+
+        <div class="info-item">
+          <strong>Chave:</strong>
+          ID_CLIENTE
+        </div>
+
+      </div>
+
+      <h3>Relacionamentos</h3>
+
+      <ul>
+        <li>FATO_VENDAS</li>
+        <li>FATO_FINANCEIRO</li>
+      </ul>
+
+      <h3>Observações</h3>
+
+      <p>
+        Tabela principal para identificação de clientes ativos.
+      </p>
+
+    </section>
+
+    <!-- OUTRA TABELA -->
+
+    <section class="doc-card">
+
+      <h2>FATO_VENDAS</h2>
+
+      <div class="info-group">
+
+        <div class="info-item">
+          <strong>Fonte:</strong>
+          SQL Server
+        </div>
+
+        <div class="info-item">
+          <strong>Granularidade:</strong>
+          Item por pedido
+        </div>
+
+      </div>
+
+      <h3>Métricas principais</h3>
+
+      <ul>
+        <li>Receita</li>
+        <li>Quantidade</li>
+        <li>Margem</li>
+      </ul>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
