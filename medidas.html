@@ -1,0 +1,52 @@
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>Receita Líquida</h2>
+
+    <span class="doc-badge dax">
+      DAX
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Calcula o faturamento líquido descontando impostos.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Categoria</strong>
+      Financeiro
+    </div>
+
+    <div class="info-item">
+      <strong>Usada em</strong>
+      Dashboard Comercial
+    </div>
+
+  </div>
+
+  <h3>Fórmula</h3>
+
+  <code class="big-code">
+    Receita Líquida =
+    SUM(Vendas[Valor]) -
+    SUM(Vendas[Imposto])
+  </code>
+
+  <h3>Regras de negócio</h3>
+
+  <ul>
+    <li>Não considera notas canceladas</li>
+    <li>Ignora devoluções</li>
+  </ul>
+
+  <h3>Observações</h3>
+
+  <p>
+    KPI principal utilizado pela diretoria.
+  </p>
+
+</section>

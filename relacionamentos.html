@@ -1,0 +1,49 @@
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>CLIENTES → VENDAS</h2>
+
+    <span class="doc-badge relationship">
+      Relacionamento
+    </span>
+
+  </div>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Origem</strong>
+      DIM_CLIENTES
+    </div>
+
+    <div class="info-item">
+      <strong>Destino</strong>
+      FATO_VENDAS
+    </div>
+
+    <div class="info-item">
+      <strong>Cardinalidade</strong>
+      1:N
+    </div>
+
+    <div class="info-item">
+      <strong>Filtro</strong>
+      Single
+    </div>
+
+  </div>
+
+  <h3>Objetivo</h3>
+
+  <p>
+    Permitir análises de vendas por cliente.
+  </p>
+
+  <h3>Problemas conhecidos</h3>
+
+  <ul>
+    <li>Clientes órfãos podem gerar inconsistência</li>
+  </ul>
+
+</section>

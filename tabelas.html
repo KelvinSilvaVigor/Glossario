@@ -101,3 +101,82 @@
 </body>
 
 </html>
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DIM_CLIENTES</h2>
+
+    <span class="doc-badge">
+      Dimensão
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Tabela responsável pelas informações cadastrais dos clientes.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Fonte</strong>
+      ERP Sankhya
+    </div>
+
+    <div class="info-item">
+      <strong>Atualização</strong>
+      Diária
+    </div>
+
+    <div class="info-item">
+      <strong>Chave</strong>
+      ID_CLIENTE
+    </div>
+
+    <div class="info-item">
+      <strong>Owner</strong>
+      Comercial
+    </div>
+
+  </div>
+
+  <h3>Relacionamentos</h3>
+
+  <ul>
+    <li>FATO_VENDAS</li>
+    <li>FATO_FINANCEIRO</li>
+  </ul>
+
+  <h3>Colunas importantes</h3>
+
+  <table class="doc-table">
+
+    <tr>
+      <th>Coluna</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+
+    <tr>
+      <td>ID_CLIENTE</td>
+      <td>Inteiro</td>
+      <td>Identificador único</td>
+    </tr>
+
+    <tr>
+      <td>NOME</td>
+      <td>Texto</td>
+      <td>Nome do cliente</td>
+    </tr>
+
+  </table>
+
+  <h3>Observações</h3>
+
+  <p>
+    Utilizada em todos os dashboards comerciais.
+  </p>
+
+</section>
