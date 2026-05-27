@@ -4,7 +4,9 @@
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>Tabelas</title>
 
@@ -16,36 +18,51 @@
 
   <main class="doc-page">
 
-    <a href="index.html" class="back-btn">
+    <a href="index.html"
+       class="back-btn">
+
       ← Voltar
+
     </a>
 
     <h1>📦 Tabelas</h1>
 
     <p class="subtitle">
-      Estrutura das tabelas utilizadas no modelo Power BI.
+      Estrutura das tabelas do modelo Power BI.
     </p>
 
-    <!-- TABELA -->
+    <!-- CARD -->
 
     <section class="doc-card">
 
-      <h2>DIM_CLIENTES</h2>
+      <div class="doc-header">
+
+        <h2>DIM_CLIENTES</h2>
+
+        <span class="doc-badge">
+          Dimensão
+        </span>
+
+      </div>
+
+      <p class="doc-description">
+        Cadastro principal de clientes.
+      </p>
 
       <div class="info-group">
 
         <div class="info-item">
-          <strong>Fonte:</strong>
+          <strong>Fonte</strong><br>
           ERP Sankhya
         </div>
 
         <div class="info-item">
-          <strong>Atualização:</strong>
+          <strong>Atualização</strong><br>
           Diária
         </div>
 
         <div class="info-item">
-          <strong>Chave:</strong>
+          <strong>Chave</strong><br>
           ID_CLIENTE
         </div>
 
@@ -54,44 +71,11 @@
       <h3>Relacionamentos</h3>
 
       <ul>
+
         <li>FATO_VENDAS</li>
+
         <li>FATO_FINANCEIRO</li>
-      </ul>
 
-      <h3>Observações</h3>
-
-      <p>
-        Tabela principal para identificação de clientes ativos.
-      </p>
-
-    </section>
-
-    <!-- OUTRA TABELA -->
-
-    <section class="doc-card">
-
-      <h2>FATO_VENDAS</h2>
-
-      <div class="info-group">
-
-        <div class="info-item">
-          <strong>Fonte:</strong>
-          SQL Server
-        </div>
-
-        <div class="info-item">
-          <strong>Granularidade:</strong>
-          Item por pedido
-        </div>
-
-      </div>
-
-      <h3>Métricas principais</h3>
-
-      <ul>
-        <li>Receita</li>
-        <li>Quantidade</li>
-        <li>Margem</li>
       </ul>
 
     </section>
@@ -101,82 +85,3 @@
 </body>
 
 </html>
-
-<section class="doc-card">
-
-  <div class="doc-header">
-
-    <h2>DIM_CLIENTES</h2>
-
-    <span class="doc-badge">
-      Dimensão
-    </span>
-
-  </div>
-
-  <p class="doc-description">
-    Tabela responsável pelas informações cadastrais dos clientes.
-  </p>
-
-  <div class="info-group">
-
-    <div class="info-item">
-      <strong>Fonte</strong>
-      ERP Sankhya
-    </div>
-
-    <div class="info-item">
-      <strong>Atualização</strong>
-      Diária
-    </div>
-
-    <div class="info-item">
-      <strong>Chave</strong>
-      ID_CLIENTE
-    </div>
-
-    <div class="info-item">
-      <strong>Owner</strong>
-      Comercial
-    </div>
-
-  </div>
-
-  <h3>Relacionamentos</h3>
-
-  <ul>
-    <li>FATO_VENDAS</li>
-    <li>FATO_FINANCEIRO</li>
-  </ul>
-
-  <h3>Colunas importantes</h3>
-
-  <table class="doc-table">
-
-    <tr>
-      <th>Coluna</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-
-    <tr>
-      <td>ID_CLIENTE</td>
-      <td>Inteiro</td>
-      <td>Identificador único</td>
-    </tr>
-
-    <tr>
-      <td>NOME</td>
-      <td>Texto</td>
-      <td>Nome do cliente</td>
-    </tr>
-
-  </table>
-
-  <h3>Observações</h3>
-
-  <p>
-    Utilizada em todos os dashboards comerciais.
-  </p>
-
-</section>
