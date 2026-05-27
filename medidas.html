@@ -18,14 +18,17 @@
 
   <main class="doc-page">
 
-    <a href="index.html" class="back-btn">
+    <a href="index.html"
+       class="back-btn">
+
       ← Voltar
+
     </a>
 
     <h1>📊 Medidas DAX</h1>
 
     <p class="subtitle">
-      Medidas utilizadas nos dashboards e KPIs.
+      Medidas e KPIs utilizados no ambiente.
     </p>
 
     <!-- CARD -->
@@ -43,18 +46,18 @@
       </div>
 
       <p class="doc-description">
-        Calcula o faturamento líquido descontando impostos.
+        Calcula faturamento líquido.
       </p>
 
       <div class="info-group">
 
         <div class="info-item">
-          <strong>Categoria</strong>
+          <strong>Categoria</strong><br>
           Financeiro
         </div>
 
         <div class="info-item">
-          <strong>Usada em</strong>
+          <strong>Usada em</strong><br>
           Dashboard Comercial
         </div>
 
@@ -70,25 +73,15 @@ SUM(Vendas[Imposto])
 
       </code>
 
-      <h3>Regras de negócio</h3>
+      <h3>Regras</h3>
 
       <ul>
 
-        <li>
-          Não considera notas canceladas
-        </li>
+        <li>Ignora devoluções</li>
 
-        <li>
-          Ignora devoluções
-        </li>
+        <li>Não considera canceladas</li>
 
       </ul>
-
-      <h3>Observações</h3>
-
-      <p>
-        KPI principal utilizado pela diretoria.
-      </p>
 
     </section>
 

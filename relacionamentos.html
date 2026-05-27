@@ -18,14 +18,17 @@
 
   <main class="doc-page">
 
-    <a href="index.html" class="back-btn">
+    <a href="index.html"
+       class="back-btn">
+
       ← Voltar
+
     </a>
 
     <h1>🔗 Relacionamentos</h1>
 
     <p class="subtitle">
-      Estrutura dos relacionamentos do modelo.
+      Estrutura do modelo dimensional.
     </p>
 
     <!-- CARD -->
@@ -45,23 +48,18 @@
       <div class="info-group">
 
         <div class="info-item">
-          <strong>Origem</strong>
+          <strong>Origem</strong><br>
           DIM_CLIENTES
         </div>
 
         <div class="info-item">
-          <strong>Destino</strong>
+          <strong>Destino</strong><br>
           FATO_VENDAS
         </div>
 
         <div class="info-item">
-          <strong>Cardinalidade</strong>
+          <strong>Cardinalidade</strong><br>
           1:N
-        </div>
-
-        <div class="info-item">
-          <strong>Filtro</strong>
-          Single
         </div>
 
       </div>
@@ -69,18 +67,8 @@
       <h3>Objetivo</h3>
 
       <p>
-        Permitir análises de vendas por cliente.
+        Permitir análise de vendas por cliente.
       </p>
-
-      <h3>Problemas conhecidos</h3>
-
-      <ul>
-
-        <li>
-          Clientes órfãos podem gerar inconsistência.
-        </li>
-
-      </ul>
 
     </section>
 
