@@ -1,49 +1,91 @@
-<section class="doc-card">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-  <div class="doc-header">
+<head>
 
-    <h2>CLIENTES → VENDAS</h2>
+  <meta charset="UTF-8">
 
-    <span class="doc-badge relationship">
-      Relacionamento
-    </span>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-  </div>
+  <title>Relacionamentos</title>
 
-  <div class="info-group">
+  <link rel="stylesheet" href="style.css">
 
-    <div class="info-item">
-      <strong>Origem</strong>
-      DIM_CLIENTES
-    </div>
+</head>
 
-    <div class="info-item">
-      <strong>Destino</strong>
-      FATO_VENDAS
-    </div>
+<body>
 
-    <div class="info-item">
-      <strong>Cardinalidade</strong>
-      1:N
-    </div>
+  <main class="doc-page">
 
-    <div class="info-item">
-      <strong>Filtro</strong>
-      Single
-    </div>
+    <a href="index.html" class="back-btn">
+      ← Voltar
+    </a>
 
-  </div>
+    <h1>🔗 Relacionamentos</h1>
 
-  <h3>Objetivo</h3>
+    <p class="subtitle">
+      Estrutura dos relacionamentos do modelo.
+    </p>
 
-  <p>
-    Permitir análises de vendas por cliente.
-  </p>
+    <!-- CARD -->
 
-  <h3>Problemas conhecidos</h3>
+    <section class="doc-card">
 
-  <ul>
-    <li>Clientes órfãos podem gerar inconsistência</li>
-  </ul>
+      <div class="doc-header">
 
-</section>
+        <h2>CLIENTES → VENDAS</h2>
+
+        <span class="doc-badge">
+          Relacionamento
+        </span>
+
+      </div>
+
+      <div class="info-group">
+
+        <div class="info-item">
+          <strong>Origem</strong>
+          DIM_CLIENTES
+        </div>
+
+        <div class="info-item">
+          <strong>Destino</strong>
+          FATO_VENDAS
+        </div>
+
+        <div class="info-item">
+          <strong>Cardinalidade</strong>
+          1:N
+        </div>
+
+        <div class="info-item">
+          <strong>Filtro</strong>
+          Single
+        </div>
+
+      </div>
+
+      <h3>Objetivo</h3>
+
+      <p>
+        Permitir análises de vendas por cliente.
+      </p>
+
+      <h3>Problemas conhecidos</h3>
+
+      <ul>
+
+        <li>
+          Clientes órfãos podem gerar inconsistência.
+        </li>
+
+      </ul>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

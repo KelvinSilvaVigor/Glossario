@@ -1,52 +1,99 @@
-<section class="doc-card">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-  <div class="doc-header">
+<head>
 
-    <h2>Receita Líquida</h2>
+  <meta charset="UTF-8">
 
-    <span class="doc-badge dax">
-      DAX
-    </span>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-  </div>
+  <title>Medidas DAX</title>
 
-  <p class="doc-description">
-    Calcula o faturamento líquido descontando impostos.
-  </p>
+  <link rel="stylesheet" href="style.css">
 
-  <div class="info-group">
+</head>
 
-    <div class="info-item">
-      <strong>Categoria</strong>
-      Financeiro
-    </div>
+<body>
 
-    <div class="info-item">
-      <strong>Usada em</strong>
-      Dashboard Comercial
-    </div>
+  <main class="doc-page">
 
-  </div>
+    <a href="index.html" class="back-btn">
+      ← Voltar
+    </a>
 
-  <h3>Fórmula</h3>
+    <h1>📊 Medidas DAX</h1>
 
-  <code class="big-code">
-    Receita Líquida =
-    SUM(Vendas[Valor]) -
-    SUM(Vendas[Imposto])
-  </code>
+    <p class="subtitle">
+      Medidas utilizadas nos dashboards e KPIs.
+    </p>
 
-  <h3>Regras de negócio</h3>
+    <!-- CARD -->
 
-  <ul>
-    <li>Não considera notas canceladas</li>
-    <li>Ignora devoluções</li>
-  </ul>
+    <section class="doc-card">
 
-  <h3>Observações</h3>
+      <div class="doc-header">
 
-  <p>
-    KPI principal utilizado pela diretoria.
-  </p>
+        <h2>Receita Líquida</h2>
 
-</section>
+        <span class="doc-badge">
+          DAX
+        </span>
+
+      </div>
+
+      <p class="doc-description">
+        Calcula o faturamento líquido descontando impostos.
+      </p>
+
+      <div class="info-group">
+
+        <div class="info-item">
+          <strong>Categoria</strong>
+          Financeiro
+        </div>
+
+        <div class="info-item">
+          <strong>Usada em</strong>
+          Dashboard Comercial
+        </div>
+
+      </div>
+
+      <h3>Fórmula</h3>
+
+      <code class="big-code">
+
+Receita Líquida =
+SUM(Vendas[Valor]) -
+SUM(Vendas[Imposto])
+
+      </code>
+
+      <h3>Regras de negócio</h3>
+
+      <ul>
+
+        <li>
+          Não considera notas canceladas
+        </li>
+
+        <li>
+          Ignora devoluções
+        </li>
+
+      </ul>
+
+      <h3>Observações</h3>
+
+      <p>
+        KPI principal utilizado pela diretoria.
+      </p>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
