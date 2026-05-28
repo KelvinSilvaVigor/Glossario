@@ -30,7 +30,7 @@
 <h1>🔗 Relacionamentos</h1>
 
 <p class="subtitle">
-  Estrutura de relacionamentos do modelo Power BI.
+  Estrutura oficial de relacionamentos do modelo Power BI.
 </p>
 
 <!-- TABS -->
@@ -58,13 +58,13 @@
 <div id="principais"
      class="tab-content active-tab">
 
-  <!-- RELACIONAMENTO -->
+  <!-- PFT 1302 -->
 
   <section class="doc-card">
 
     <div class="doc-header">
 
-      <h2>DimClientes → PFT 1302</h2>
+      <h2>PFT 1302 → DimCalendario</h2>
 
       <span class="doc-badge">
         Principal
@@ -73,24 +73,66 @@
     </div>
 
     <p class="doc-description">
-      Relacionamento principal entre clientes e faturamento.
+      Relacionamento temporal principal do faturamento.
     </p>
 
     <div class="info-group">
 
       <div class="info-item">
         <strong>Origem</strong><br>
-        DimClientes[CNPJ-LOJA]
+        PFT 1302[DATA_EMISSAO]
       </div>
 
       <div class="info-item">
         <strong>Destino</strong><br>
+        DimCalendario[Data]
+      </div>
+
+      <div class="info-item">
+        <strong>Cardinalidade</strong><br>
+        N:1
+      </div>
+
+      <div class="info-item">
+        <strong>Filtro</strong><br>
+        Single
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>PFT 1302 → Regional_Logistica</h2>
+
+      <span class="doc-badge">
+        Principal
+      </span>
+
+    </div>
+
+    <p class="doc-description">
+      Relacionamento regional da operação logística.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
         PFT 1302[ID CNPJ+LOJA]
       </div>
 
       <div class="info-item">
+        <strong>Destino</strong><br>
+        Regional_Logistica[ID CNPJ + LOJA]
+      </div>
+
+      <div class="info-item">
         <strong>Cardinalidade</strong><br>
-        1:N
+        N:1
       </div>
 
       <div class="info-item">
@@ -102,13 +144,11 @@
 
   </section>
 
-  <!-- RELACIONAMENTO -->
-
   <section class="doc-card">
 
     <div class="doc-header">
 
-      <h2>DimCalendario → PFT 1302</h2>
+      <h2>PFT 1302 → DimClientes</h2>
 
       <span class="doc-badge">
         Principal
@@ -117,24 +157,24 @@
     </div>
 
     <p class="doc-description">
-      Relacionamento temporal utilizado nas análises de faturamento.
+      Relacionamento principal entre faturamento e clientes.
     </p>
 
     <div class="info-group">
 
       <div class="info-item">
         <strong>Origem</strong><br>
-        DimCalendario[Date]
+        PFT 1302[ID CNPJ+LOJA]
       </div>
 
       <div class="info-item">
         <strong>Destino</strong><br>
-        PFT 1302[Data Faturamento]
+        DimClientes[CNPJ-LOJA]
       </div>
 
       <div class="info-item">
         <strong>Cardinalidade</strong><br>
-        1:N
+        N:1
       </div>
 
       <div class="info-item">
@@ -146,13 +186,11 @@
 
   </section>
 
-  <!-- RELACIONAMENTO -->
-
   <section class="doc-card">
 
     <div class="doc-header">
 
-      <h2>DimVendedor → PFT 1302</h2>
+      <h2>PFT 1302 → DimVendedor</h2>
 
       <span class="doc-badge">
         Principal
@@ -168,17 +206,17 @@
 
       <div class="info-item">
         <strong>Origem</strong><br>
-        DimVendedor[Vendedor]
+        PFT 1302[NOM_VENDEDOR]
       </div>
 
       <div class="info-item">
         <strong>Destino</strong><br>
-        PFT 1302[Vendedor]
+        DimVendedor[NOME_VENDEDOR]
       </div>
 
       <div class="info-item">
         <strong>Cardinalidade</strong><br>
-        1:N
+        N:1
       </div>
 
       <div class="info-item">
@@ -190,13 +228,11 @@
 
   </section>
 
-  <!-- RELACIONAMENTO -->
-
   <section class="doc-card">
 
     <div class="doc-header">
 
-      <h2>DimTransportador → PFT 1302</h2>
+      <h2>PFT 1302 → DimTransportador</h2>
 
       <span class="doc-badge">
         Principal
@@ -205,24 +241,24 @@
     </div>
 
     <p class="doc-description">
-      Relacionamento logístico utilizado para análises de transporte.
+      Relacionamento logístico por transportadora.
     </p>
 
     <div class="info-group">
 
       <div class="info-item">
         <strong>Origem</strong><br>
-        DimTransportador[Transportadora]
+        PFT 1302[NOM_TRANSPORTADOR_VIGOR_1]
       </div>
 
       <div class="info-item">
         <strong>Destino</strong><br>
-        PFT 1302[Transportadora]
+        DimTransportador[NOM_TRANSPORTADOR_VIGOR_1]
       </div>
 
       <div class="info-item">
         <strong>Cardinalidade</strong><br>
-        1:N
+        N:1
       </div>
 
       <div class="info-item">
@@ -234,13 +270,13 @@
 
   </section>
 
-  <!-- RELACIONAMENTO -->
+  <!-- PEX 1031 -->
 
   <section class="doc-card">
 
     <div class="doc-header">
 
-      <h2>Regional_Logistica → PFT 1302</h2>
+      <h2>PEX 1031 → DimCalendario</h2>
 
       <span class="doc-badge">
         Principal
@@ -249,29 +285,167 @@
     </div>
 
     <p class="doc-description">
-      Relacionamento regional utilizado na operação logística.
+      Relacionamento temporal da tabela de devoluções.
     </p>
 
     <div class="info-group">
 
       <div class="info-item">
         <strong>Origem</strong><br>
-        Regional_Logistica[Regional]
+        PEX 1031[EMISSAO]
       </div>
 
       <div class="info-item">
         <strong>Destino</strong><br>
-        PFT 1302[Regional]
+        DimCalendario[Data]
       </div>
 
       <div class="info-item">
         <strong>Cardinalidade</strong><br>
-        1:N
+        N:1
       </div>
 
       <div class="info-item">
         <strong>Filtro</strong><br>
         Single
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>PEX 1031 → DimClientes</h2>
+
+      <span class="doc-badge">
+        Principal
+      </span>
+
+    </div>
+
+    <p class="doc-description">
+      Relacionamento entre devoluções e clientes.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        PEX 1031[CNPJ-LOJA]
+      </div>
+
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        DimClientes[CNPJ-LOJA]
+      </div>
+
+      <div class="info-item">
+        <strong>Cardinalidade</strong><br>
+        N:1
+      </div>
+
+      <div class="info-item">
+        <strong>Filtro</strong><br>
+        Single
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>PEX 1031 → Regional_Logistica</h2>
+
+      <span class="doc-badge">
+        Principal
+      </span>
+
+    </div>
+
+    <p class="doc-description">
+      Relacionamento regional da tabela de devoluções.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        PEX 1031[CNPJ-LOJA]
+      </div>
+
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        Regional_Logistica[ID CNPJ + LOJA]
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>PEX 1031 → DimVendedor</h2>
+
+      <span class="doc-badge">
+        Principal
+      </span>
+
+    </div>
+
+    <p class="doc-description">
+      Relacionamento comercial da tabela de devoluções.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        PEX 1031[VENDEDOR]
+      </div>
+
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        DimVendedor[NOME_VENDEDOR]
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>PEX 1031 → DimTransportador</h2>
+
+      <span class="doc-badge">
+        Principal
+      </span>
+
+    </div>
+
+    <p class="doc-description">
+      Relacionamento logístico da tabela de devoluções.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        PEX 1031[NMTRANSP]
+      </div>
+
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        DimTransportador[NOM_TRANSPORTADOR_VIGOR_1]
       </div>
 
     </div>
@@ -285,13 +459,11 @@
 <div id="auxiliares"
      class="tab-content">
 
-  <!-- RELACIONAMENTO -->
-
   <section class="doc-card">
 
     <div class="doc-header">
 
-      <h2>DimClientes → PEX 1031</h2>
+      <h2>DimCalendario → LocalDateTable</h2>
 
       <span class="doc-badge">
         Auxiliar
@@ -300,42 +472,16 @@
     </div>
 
     <p class="doc-description">
-      Relacionamento auxiliar utilizado para análise de devoluções.
+      Relacionamento auxiliar de datas locais do Power BI.
     </p>
-
-    <div class="info-group">
-
-      <div class="info-item">
-        <strong>Origem</strong><br>
-        DimClientes[CNPJ-LOJA]
-      </div>
-
-      <div class="info-item">
-        <strong>Destino</strong><br>
-        PEX 1031[ID CNPJ+LOJA]
-      </div>
-
-      <div class="info-item">
-        <strong>Cardinalidade</strong><br>
-        1:N
-      </div>
-
-      <div class="info-item">
-        <strong>Filtro</strong><br>
-        Single
-      </div>
-
-    </div>
 
   </section>
 
-  <!-- RELACIONAMENTO -->
-
   <section class="doc-card">
 
     <div class="doc-header">
 
-      <h2>DimCalendario → PEX 1031</h2>
+      <h2>DTime → LocalDateTable</h2>
 
       <span class="doc-badge">
         Auxiliar
@@ -344,32 +490,26 @@
     </div>
 
     <p class="doc-description">
-      Relacionamento temporal da tabela de devoluções.
+      Relacionamento auxiliar de atualização de data.
     </p>
 
-    <div class="info-group">
+  </section>
 
-      <div class="info-item">
-        <strong>Origem</strong><br>
-        DimCalendario[Date]
-      </div>
+  <section class="doc-card">
 
-      <div class="info-item">
-        <strong>Destino</strong><br>
-        PEX 1031[Data]
-      </div>
+    <div class="doc-header">
 
-      <div class="info-item">
-        <strong>Cardinalidade</strong><br>
-        1:N
-      </div>
+      <h2>DTime → LocalDateTable2</h2>
 
-      <div class="info-item">
-        <strong>Filtro</strong><br>
-        Single
-      </div>
+      <span class="doc-badge">
+        Auxiliar
+      </span>
 
     </div>
+
+    <p class="doc-description">
+      Relacionamento auxiliar de segunda data de atualização.
+    </p>
 
   </section>
 
