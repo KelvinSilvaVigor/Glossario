@@ -370,3 +370,63 @@ h1 {
 
   display: block;
 }
+
+/* TABS */
+
+.tabs {
+
+  display: flex;
+
+  gap: 12px;
+
+  margin: 30px 0;
+}
+
+/* BOTÃO */
+
+.tab-btn {
+
+  background: #111827;
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  color: #cbd5e1;
+
+  padding: 12px 18px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.tab-btn:hover {
+
+  border-color: #3b82f6;
+
+  color: white;
+}
+
+/* BOTÃO ATIVO */
+
+.tab-btn.active {
+
+  background: #2563eb;
+
+  color: white;
+}
+
+/* CONTEÚDO */
+
+.tab-content {
+
+  display: none;
+}
+
+/* ABA ATIVA */
+
+.active-tab {
+
+  display: block;
+}
