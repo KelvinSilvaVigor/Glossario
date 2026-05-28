@@ -2,7 +2,7 @@
   {
     "nome": "DimCalendario",
     "tipo": "Dimensão",
-    "Origem": "Linguagem M",
+    "descricao": "Tabela calendário criada em Linguagem M",
     "relacionamentos": []
   },
 
@@ -30,7 +30,7 @@
   {
     "nome": "Regional_Logistica",
     "tipo": "Dimensão",
-    "descricao": "",
+    "descricao": "Tabela regional logística",
     "relacionamentos": []
   },
 
