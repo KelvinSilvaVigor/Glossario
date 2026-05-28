@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+     content="width=device-width, initial-scale=1.0">
 
   <title>Tabelas</title>
 
@@ -18,24 +19,246 @@
 
   <main class="doc-page">
 
-    <a href="index.html"
-       class="back-btn">
+```
+<a href="index.html"
+   class="back-btn">
 
-      ← Voltar
+  ← Voltar
 
-    </a>
+</a>
 
-    <h1>📦 Tabelas</h1>
+<h1>📦 Tabelas</h1>
 
-    <p class="subtitle">
-      Estrutura das tabelas do modelo Power BI.
-    </p>
+<p class="subtitle">
+  Estrutura das tabelas do modelo Power BI.
+</p>
 
-    <div id="tablesContainer"></div>
+<!-- DIM CALENDARIO -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DimCalendario</h2>
+
+    <span class="doc-badge">
+      Dimensão
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Tabela calendário utilizada para inteligência temporal.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Fonte</strong><br>
+      Linguagem M
+    </div>
+
+    <div class="info-item">
+      <strong>Granularidade</strong><br>
+      Data
+    </div>
+
+  </div>
+
+  <h3>Relacionamentos</h3>
+
+  <ul>
+
+    <li>PFT 1302</li>
+
+    <li>PEX 1031</li>
+
+  </ul>
+
+</section>
+
+<!-- DIM CLIENTES -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DimClientes</h2>
+
+    <span class="doc-badge">
+      Dimensão
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Cadastro principal de clientes do ambiente.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Fonte</strong><br>
+      PFT 2026ap
+    </div>
+
+    <div class="info-item">
+      <strong>Granularidade</strong><br>
+      Cliente
+    </div>
+
+  </div>
+
+  <h3>Relacionamentos</h3>
+
+  <ul>
+
+    <li>PFT 1302</li>
+
+    <li>PEX 1031</li>
+
+  </ul>
+
+</section>
+
+<!-- DIM TRANSPORTADOR -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DimTransportador</h2>
+
+    <span class="doc-badge">
+      Dimensão
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Cadastro de transportadoras utilizadas na operação.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Fonte</strong><br>
+      PFT 2026ap
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DIM VENDEDOR -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DimVendedor</h2>
+
+    <span class="doc-badge">
+      Dimensão
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Cadastro de vendedores do ambiente comercial.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Fonte</strong><br>
+      PFT 2026ap
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REGIONAL LOGISTICA -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>Regional_Logistica</h2>
+
+    <span class="doc-badge">
+      Dimensão
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Estrutura regional utilizada pela logística.
+  </p>
+
+</section>
+
+<!-- PEX -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>PEX 1031</h2>
+
+    <span class="doc-badge">
+      Fato
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Base de retorno por SKU.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Atualização</strong><br>
+      Diária
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PFT -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>PFT 1302</h2>
+
+    <span class="doc-badge">
+      Fato
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Base principal de faturamento.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Atualização</strong><br>
+      Diária
+    </div>
+
+  </div>
+
+</section>
+```
 
   </main>
-
-  <script src="tabelas.js"></script>
 
 </body>
 
