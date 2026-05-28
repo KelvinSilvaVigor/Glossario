@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+     content="width=device-width, initial-scale=1.0">
 
   <title>Relacionamentos</title>
 
@@ -18,59 +19,333 @@
 
   <main class="doc-page">
 
-    <a href="index.html"
-       class="back-btn">
+<a href="index.html"
+   class="back-btn">
 
-      ← Voltar
+  ← Voltar
 
-    </a>
+</a>
 
-    <h1>🔗 Relacionamentos</h1>
+<h1>🔗 Relacionamentos</h1>
 
-    <p class="subtitle">
-      Estrutura do modelo dimensional.
-    </p>
+<p class="subtitle">
+  Estrutura de relacionamentos do modelo Power BI.
+</p>
 
-    <!-- CARD -->
+<!-- RELACIONAMENTO -->
 
-    <section class="doc-card">
+<section class="doc-card">
 
-      <div class="doc-header">
+  <div class="doc-header">
 
-        <h2>CLIENTES → VENDAS</h2>
+    <h2>DimClientes → PFT 1302</h2>
 
-        <span class="doc-badge">
-          Relacionamento
-        </span>
+    <span class="doc-badge">
+      1:N
+    </span>
 
-      </div>
+  </div>
 
-      <div class="info-group">
+  <p class="doc-description">
+    Relacionamento principal entre clientes e faturamento.
+  </p>
 
-        <div class="info-item">
-          <strong>Origem</strong><br>
-          DIM_CLIENTES
-        </div>
+  <div class="info-group">
 
-        <div class="info-item">
-          <strong>Destino</strong><br>
-          FATO_VENDAS
-        </div>
+    <div class="info-item">
+      <strong>Origem</strong><br>
+      DimClientes[CNPJ-LOJA]
+    </div>
 
-        <div class="info-item">
-          <strong>Cardinalidade</strong><br>
-          1:N
-        </div>
+    <div class="info-item">
+      <strong>Destino</strong><br>
+      PFT 1302[ID CNPJ+LOJA]
+    </div>
 
-      </div>
+    <div class="info-item">
+      <strong>Filtro</strong><br>
+      Single
+    </div>
 
-      <h3>Objetivo</h3>
+  </div>
 
-      <p>
-        Permitir análise de vendas por cliente.
-      </p>
+  <h3>Objetivo</h3>
 
-    </section>
+  <p>
+    Permitir análises de faturamento por cliente.
+  </p>
+
+</section>
+
+<!-- RELACIONAMENTO -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DimCalendario → PFT 1302</h2>
+
+    <span class="doc-badge">
+      1:N
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Relacionamento temporal utilizado para inteligência de tempo.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Origem</strong><br>
+      DimCalendario[Date]
+    </div>
+
+    <div class="info-item">
+      <strong>Destino</strong><br>
+      PFT 1302[Data Faturamento]
+    </div>
+
+    <div class="info-item">
+      <strong>Filtro</strong><br>
+      Single
+    </div>
+
+  </div>
+
+  <h3>Objetivo</h3>
+
+  <p>
+    Permitir análises mensais, anuais e acumuladas.
+  </p>
+
+</section>
+
+<!-- RELACIONAMENTO -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DimVendedor → PFT 1302</h2>
+
+    <span class="doc-badge">
+      1:N
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Relacionamento entre vendedores e faturamento.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Origem</strong><br>
+      DimVendedor[Vendedor]
+    </div>
+
+    <div class="info-item">
+      <strong>Destino</strong><br>
+      PFT 1302[Vendedor]
+    </div>
+
+    <div class="info-item">
+      <strong>Filtro</strong><br>
+      Single
+    </div>
+
+  </div>
+
+  <h3>Objetivo</h3>
+
+  <p>
+    Permitir análises comerciais por vendedor.
+  </p>
+
+</section>
+
+<!-- RELACIONAMENTO -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DimTransportador → PFT 1302</h2>
+
+    <span class="doc-badge">
+      1:N
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Relacionamento entre transportadora e faturamento.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Origem</strong><br>
+      DimTransportador[Transportadora]
+    </div>
+
+    <div class="info-item">
+      <strong>Destino</strong><br>
+      PFT 1302[Transportadora]
+    </div>
+
+    <div class="info-item">
+      <strong>Filtro</strong><br>
+      Single
+    </div>
+
+  </div>
+
+  <h3>Objetivo</h3>
+
+  <p>
+    Permitir análises logísticas e de transporte.
+  </p>
+
+</section>
+
+<!-- RELACIONAMENTO -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>Regional_Logistica → PFT 1302</h2>
+
+    <span class="doc-badge">
+      1:N
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Relacionamento regional para análises logísticas.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Origem</strong><br>
+      Regional_Logistica[Regional]
+    </div>
+
+    <div class="info-item">
+      <strong>Destino</strong><br>
+      PFT 1302[Regional]
+    </div>
+
+    <div class="info-item">
+      <strong>Filtro</strong><br>
+      Single
+    </div>
+
+  </div>
+
+  <h3>Objetivo</h3>
+
+  <p>
+    Permitir análises regionais da operação.
+  </p>
+
+</section>
+
+<!-- RELACIONAMENTO -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DimClientes → PEX 1031</h2>
+
+    <span class="doc-badge">
+      1:N
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Relacionamento entre clientes e devoluções.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Origem</strong><br>
+      DimClientes[CNPJ-LOJA]
+    </div>
+
+    <div class="info-item">
+      <strong>Destino</strong><br>
+      PEX 1031[ID CNPJ+LOJA]
+    </div>
+
+    <div class="info-item">
+      <strong>Filtro</strong><br>
+      Single
+    </div>
+
+  </div>
+
+  <h3>Objetivo</h3>
+
+  <p>
+    Relacionar devoluções aos clientes.
+  </p>
+
+</section>
+
+<!-- RELACIONAMENTO -->
+
+<section class="doc-card">
+
+  <div class="doc-header">
+
+    <h2>DimCalendario → PEX 1031</h2>
+
+    <span class="doc-badge">
+      1:N
+    </span>
+
+  </div>
+
+  <p class="doc-description">
+    Relacionamento temporal da tabela de devoluções.
+  </p>
+
+  <div class="info-group">
+
+    <div class="info-item">
+      <strong>Origem</strong><br>
+      DimCalendario[Date]
+    </div>
+
+    <div class="info-item">
+      <strong>Destino</strong><br>
+      PEX 1031[Data]
+    </div>
+
+    <div class="info-item">
+      <strong>Filtro</strong><br>
+      Single
+    </div>
+
+  </div>
+
+  <h3>Objetivo</h3>
+
+  <p>
+    Permitir análises temporais de devolução.
+  </p>
+
+</section>
 
   </main>
 
