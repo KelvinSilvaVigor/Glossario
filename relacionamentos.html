@@ -19,7 +19,6 @@
 
   <main class="doc-page">
 
-```
 <a href="index.html"
    class="back-btn">
 
@@ -58,7 +57,7 @@
 <div id="principais"
      class="tab-content active-tab">
 
-  <!-- RELACIONAMENTO -->
+  <!-- CLIENTES -->
 
   <section class="doc-card">
 
@@ -67,7 +66,7 @@
       <h2>DimClientes → PFT 1302</h2>
 
       <span class="doc-badge">
-        1:N
+        Principal
       </span>
 
     </div>
@@ -89,6 +88,11 @@
       </div>
 
       <div class="info-item">
+        <strong>Cardinalidade</strong><br>
+        1:N
+      </div>
+
+      <div class="info-item">
         <strong>Filtro</strong><br>
         Single
       </div>
@@ -97,7 +101,7 @@
 
   </section>
 
-  <!-- RELACIONAMENTO -->
+  <!-- CALENDARIO -->
 
   <section class="doc-card">
 
@@ -106,13 +110,13 @@
       <h2>DimCalendario → PFT 1302</h2>
 
       <span class="doc-badge">
-        1:N
+        Principal
       </span>
 
     </div>
 
     <p class="doc-description">
-      Relacionamento temporal utilizado no faturamento.
+      Relacionamento temporal utilizado nas análises de faturamento.
     </p>
 
     <div class="info-group">
@@ -128,6 +132,11 @@
       </div>
 
       <div class="info-item">
+        <strong>Cardinalidade</strong><br>
+        1:N
+      </div>
+
+      <div class="info-item">
         <strong>Filtro</strong><br>
         Single
       </div>
@@ -136,7 +145,7 @@
 
   </section>
 
-  <!-- RELACIONAMENTO -->
+  <!-- VENDEDOR -->
 
   <section class="doc-card">
 
@@ -145,13 +154,13 @@
       <h2>DimVendedor → PFT 1302</h2>
 
       <span class="doc-badge">
-        1:N
+        Principal
       </span>
 
     </div>
 
     <p class="doc-description">
-      Relacionamento comercial por vendedor.
+      Relacionamento comercial utilizado para análises por vendedor.
     </p>
 
     <div class="info-group">
@@ -167,6 +176,11 @@
       </div>
 
       <div class="info-item">
+        <strong>Cardinalidade</strong><br>
+        1:N
+      </div>
+
+      <div class="info-item">
         <strong>Filtro</strong><br>
         Single
       </div>
@@ -175,7 +189,7 @@
 
   </section>
 
-  <!-- RELACIONAMENTO -->
+  <!-- TRANSPORTADOR -->
 
   <section class="doc-card">
 
@@ -184,13 +198,13 @@
       <h2>DimTransportador → PFT 1302</h2>
 
       <span class="doc-badge">
-        1:N
+        Principal
       </span>
 
     </div>
 
     <p class="doc-description">
-      Relacionamento logístico por transportadora.
+      Relacionamento logístico utilizado para análises de transporte.
     </p>
 
     <div class="info-group">
@@ -206,6 +220,11 @@
       </div>
 
       <div class="info-item">
+        <strong>Cardinalidade</strong><br>
+        1:N
+      </div>
+
+      <div class="info-item">
         <strong>Filtro</strong><br>
         Single
       </div>
@@ -214,7 +233,7 @@
 
   </section>
 
-  <!-- RELACIONAMENTO -->
+  <!-- REGIONAL -->
 
   <section class="doc-card">
 
@@ -223,13 +242,13 @@
       <h2>Regional_Logistica → PFT 1302</h2>
 
       <span class="doc-badge">
-        1:N
+        Principal
       </span>
 
     </div>
 
     <p class="doc-description">
-      Relacionamento regional da logística.
+      Relacionamento regional utilizado na operação logística.
     </p>
 
     <div class="info-group">
@@ -242,6 +261,11 @@
       <div class="info-item">
         <strong>Destino</strong><br>
         PFT 1302[Regional]
+      </div>
+
+      <div class="info-item">
+        <strong>Cardinalidade</strong><br>
+        1:N
       </div>
 
       <div class="info-item">
@@ -260,7 +284,7 @@
 <div id="auxiliares"
      class="tab-content">
 
-  <!-- RELACIONAMENTO -->
+  <!-- CLIENTES DEVOLUÇÃO -->
 
   <section class="doc-card">
 
@@ -269,13 +293,13 @@
       <h2>DimClientes → PEX 1031</h2>
 
       <span class="doc-badge">
-        1:N
+        Auxiliar
       </span>
 
     </div>
 
     <p class="doc-description">
-      Relacionamento entre clientes e devoluções.
+      Relacionamento entre clientes e base de devoluções.
     </p>
 
     <div class="info-group">
@@ -291,6 +315,11 @@
       </div>
 
       <div class="info-item">
+        <strong>Cardinalidade</strong><br>
+        1:N
+      </div>
+
+      <div class="info-item">
         <strong>Filtro</strong><br>
         Single
       </div>
@@ -299,7 +328,7 @@
 
   </section>
 
-  <!-- RELACIONAMENTO -->
+  <!-- CALENDARIO DEVOLUÇÃO -->
 
   <section class="doc-card">
 
@@ -308,13 +337,13 @@
       <h2>DimCalendario → PEX 1031</h2>
 
       <span class="doc-badge">
-        1:N
+        Auxiliar
       </span>
 
     </div>
 
     <p class="doc-description">
-      Relacionamento temporal da base de devoluções.
+      Relacionamento temporal da tabela de devoluções.
     </p>
 
     <div class="info-group">
@@ -330,6 +359,11 @@
       </div>
 
       <div class="info-item">
+        <strong>Cardinalidade</strong><br>
+        1:N
+      </div>
+
+      <div class="info-item">
         <strong>Filtro</strong><br>
         Single
       </div>
@@ -339,7 +373,6 @@
   </section>
 
 </div>
-```
 
   </main>
 
