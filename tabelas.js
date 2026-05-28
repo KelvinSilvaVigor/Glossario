@@ -1,49 +1,77 @@
-console.log("JS funcionando");
+const tabelas = [
 
-fetch("data/tabelas.json")
+  {
+    nome: "DimCalendario",
+    tipo: "Dimensão",
+    descricao: "Tabela calendário criada em Linguagem M"
+  },
 
-  .then(response => response.json())
+  {
+    nome: "DimClientes",
+    tipo: "Dimensão",
+    descricao: "Base PFT 2026ap"
+  },
 
-  .then(data => {
+  {
+    nome: "DimTransportador",
+    tipo: "Dimensão",
+    descricao: "Base PFT 2026ap"
+  },
 
-    console.log(data);
+  {
+    nome: "DimVendedor",
+    tipo: "Dimensão",
+    descricao: "Base PFT 2026ap"
+  },
 
-    const container =
-      document.getElementById("tablesContainer");
+  {
+    nome: "Regional_Logistica",
+    tipo: "Dimensão",
+    descricao: "Tabela logística regional"
+  },
 
-    data.forEach(table => {
+  {
+    nome: "PEX 1031",
+    tipo: "Fato",
+    descricao: "Retorno por SKU"
+  },
 
-      const card =
-        document.createElement("section");
+  {
+    nome: "PFT 1302",
+    tipo: "Fato",
+    descricao: "Faturamento"
+  }
 
-      card.className = "doc-card";
+];
 
-      card.innerHTML = `
+const container =
+  document.getElementById("tablesContainer");
 
-        <div class="doc-header">
+tabelas.forEach(table => {
 
-          <h2>${table.nome}</h2>
+  const card =
+    document.createElement("section");
 
-          <span class="doc-badge">
-            ${table.tipo}
-          </span>
+  card.className = "doc-card";
 
-        </div>
+  card.innerHTML = `
 
-        <p class="doc-description">
-          ${table.descricao || "Sem descrição"}
-        </p>
+    <div class="doc-header">
 
-      `;
+      <h2>${table.nome}</h2>
 
-      container.appendChild(card);
+      <span class="doc-badge">
+        ${table.tipo}
+      </span>
 
-    });
+    </div>
 
-  })
+    <p class="doc-description">
+      ${table.descricao}
+    </p>
 
-  .catch(error => {
+  `;
 
-    console.error("ERRO:", error);
+  container.appendChild(card);
 
-  });
+});
