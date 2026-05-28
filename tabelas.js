@@ -1,15 +1,20 @@
+console.log("JS funcionando");
+
 fetch("data/tabelas.json")
 
   .then(response => response.json())
 
   .then(data => {
 
+    console.log(data);
+
     const container =
       document.getElementById("tablesContainer");
 
     data.forEach(table => {
 
-      const card = document.createElement("section");
+      const card =
+        document.createElement("section");
 
       card.className = "doc-card";
 
@@ -29,19 +34,16 @@ fetch("data/tabelas.json")
           ${table.descricao || "Sem descrição"}
         </p>
 
-        <div class="info-group">
-
-          <div class="info-item">
-            <strong>Relacionamentos</strong><br>
-            ${table.relacionamentos.join(", ") || "Nenhum"}
-          </div>
-
-        </div>
-
       `;
 
       container.appendChild(card);
 
     });
+
+  })
+
+  .catch(error => {
+
+    console.error("ERRO:", error);
 
   });
