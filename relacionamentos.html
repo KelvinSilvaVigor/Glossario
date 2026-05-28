@@ -32,322 +32,326 @@
   Estrutura de relacionamentos do modelo Power BI.
 </p>
 
-<!-- RELACIONAMENTO -->
+<!-- TABS -->
 
-<section class="doc-card">
+<div class="tabs">
 
-  <div class="doc-header">
+  <button class="tab-btn active"
+          onclick="showTab('principais', event)">
 
-    <h2>DimClientes → PFT 1302</h2>
+    Principais
 
-    <span class="doc-badge">
-      1:N
-    </span>
+  </button>
 
-  </div>
+  <button class="tab-btn"
+          onclick="showTab('auxiliares', event)">
 
-  <p class="doc-description">
-    Relacionamento principal entre clientes e faturamento.
-  </p>
+    Auxiliares
 
-  <div class="info-group">
+  </button>
 
-    <div class="info-item">
-      <strong>Origem</strong><br>
-      DimClientes[CNPJ-LOJA]
+</div>
+
+<!-- PRINCIPAIS -->
+
+<div id="principais"
+     class="tab-content active-tab">
+
+  <!-- RELACIONAMENTO -->
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>DimClientes → PFT 1302</h2>
+
+      <span class="doc-badge">
+        1:N
+      </span>
+
     </div>
 
-    <div class="info-item">
-      <strong>Destino</strong><br>
-      PFT 1302[ID CNPJ+LOJA]
+    <p class="doc-description">
+      Relacionamento principal entre clientes e faturamento.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        DimClientes[CNPJ-LOJA]
+      </div>
+
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        PFT 1302[ID CNPJ+LOJA]
+      </div>
+
+      <div class="info-item">
+        <strong>Filtro</strong><br>
+        Single
+      </div>
+
     </div>
 
-    <div class="info-item">
-      <strong>Filtro</strong><br>
-      Single
+  </section>
+
+  <!-- RELACIONAMENTO -->
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>DimCalendario → PFT 1302</h2>
+
+      <span class="doc-badge">
+        1:N
+      </span>
+
     </div>
 
-  </div>
+    <p class="doc-description">
+      Relacionamento temporal utilizado no faturamento.
+    </p>
 
-  <h3>Objetivo</h3>
+    <div class="info-group">
 
-  <p>
-    Permitir análises de faturamento por cliente.
-  </p>
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        DimCalendario[Date]
+      </div>
 
-</section>
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        PFT 1302[Data Faturamento]
+      </div>
 
-<!-- RELACIONAMENTO -->
+      <div class="info-item">
+        <strong>Filtro</strong><br>
+        Single
+      </div>
 
-<section class="doc-card">
-
-  <div class="doc-header">
-
-    <h2>DimCalendario → PFT 1302</h2>
-
-    <span class="doc-badge">
-      1:N
-    </span>
-
-  </div>
-
-  <p class="doc-description">
-    Relacionamento temporal utilizado para inteligência de tempo.
-  </p>
-
-  <div class="info-group">
-
-    <div class="info-item">
-      <strong>Origem</strong><br>
-      DimCalendario[Date]
     </div>
 
-    <div class="info-item">
-      <strong>Destino</strong><br>
-      PFT 1302[Data Faturamento]
+  </section>
+
+  <!-- RELACIONAMENTO -->
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>DimVendedor → PFT 1302</h2>
+
+      <span class="doc-badge">
+        1:N
+      </span>
+
     </div>
 
-    <div class="info-item">
-      <strong>Filtro</strong><br>
-      Single
+    <p class="doc-description">
+      Relacionamento comercial por vendedor.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        DimVendedor[Vendedor]
+      </div>
+
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        PFT 1302[Vendedor]
+      </div>
+
+      <div class="info-item">
+        <strong>Filtro</strong><br>
+        Single
+      </div>
+
     </div>
 
-  </div>
+  </section>
 
-  <h3>Objetivo</h3>
+</div>
 
-  <p>
-    Permitir análises mensais, anuais e acumuladas.
-  </p>
+<!-- AUXILIARES -->
 
-</section>
+<div id="auxiliares"
+     class="tab-content">
 
-<!-- RELACIONAMENTO -->
+  <!-- RELACIONAMENTO -->
 
-<section class="doc-card">
+  <section class="doc-card">
 
-  <div class="doc-header">
+    <div class="doc-header">
 
-    <h2>DimVendedor → PFT 1302</h2>
+      <h2>DimTransportador → PFT 1302</h2>
 
-    <span class="doc-badge">
-      1:N
-    </span>
+      <span class="doc-badge">
+        1:N
+      </span>
 
-  </div>
-
-  <p class="doc-description">
-    Relacionamento entre vendedores e faturamento.
-  </p>
-
-  <div class="info-group">
-
-    <div class="info-item">
-      <strong>Origem</strong><br>
-      DimVendedor[Vendedor]
     </div>
 
-    <div class="info-item">
-      <strong>Destino</strong><br>
-      PFT 1302[Vendedor]
+    <p class="doc-description">
+      Relacionamento logístico por transportadora.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        DimTransportador[Transportadora]
+      </div>
+
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        PFT 1302[Transportadora]
+      </div>
+
     </div>
 
-    <div class="info-item">
-      <strong>Filtro</strong><br>
-      Single
+  </section>
+
+  <!-- RELACIONAMENTO -->
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>Regional_Logistica → PFT 1302</h2>
+
+      <span class="doc-badge">
+        1:N
+      </span>
+
     </div>
 
-  </div>
+    <p class="doc-description">
+      Relacionamento regional da logística.
+    </p>
 
-  <h3>Objetivo</h3>
+    <div class="info-group">
 
-  <p>
-    Permitir análises comerciais por vendedor.
-  </p>
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        Regional_Logistica[Regional]
+      </div>
 
-</section>
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        PFT 1302[Regional]
+      </div>
 
-<!-- RELACIONAMENTO -->
-
-<section class="doc-card">
-
-  <div class="doc-header">
-
-    <h2>DimTransportador → PFT 1302</h2>
-
-    <span class="doc-badge">
-      1:N
-    </span>
-
-  </div>
-
-  <p class="doc-description">
-    Relacionamento entre transportadora e faturamento.
-  </p>
-
-  <div class="info-group">
-
-    <div class="info-item">
-      <strong>Origem</strong><br>
-      DimTransportador[Transportadora]
     </div>
 
-    <div class="info-item">
-      <strong>Destino</strong><br>
-      PFT 1302[Transportadora]
+  </section>
+
+  <!-- RELACIONAMENTO -->
+
+  <section class="doc-card">
+
+    <div class="doc-header">
+
+      <h2>DimClientes → PEX 1031</h2>
+
+      <span class="doc-badge">
+        1:N
+      </span>
+
     </div>
 
-    <div class="info-item">
-      <strong>Filtro</strong><br>
-      Single
+    <p class="doc-description">
+      Relacionamento entre clientes e devoluções.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        DimClientes[CNPJ-LOJA]
+      </div>
+
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        PEX 1031[ID CNPJ+LOJA]
+      </div>
+
     </div>
 
-  </div>
+  </section>
 
-  <h3>Objetivo</h3>
+  <!-- RELACIONAMENTO -->
 
-  <p>
-    Permitir análises logísticas e de transporte.
-  </p>
+  <section class="doc-card">
 
-</section>
+    <div class="doc-header">
 
-<!-- RELACIONAMENTO -->
+      <h2>DimCalendario → PEX 1031</h2>
 
-<section class="doc-card">
+      <span class="doc-badge">
+        1:N
+      </span>
 
-  <div class="doc-header">
-
-    <h2>Regional_Logistica → PFT 1302</h2>
-
-    <span class="doc-badge">
-      1:N
-    </span>
-
-  </div>
-
-  <p class="doc-description">
-    Relacionamento regional para análises logísticas.
-  </p>
-
-  <div class="info-group">
-
-    <div class="info-item">
-      <strong>Origem</strong><br>
-      Regional_Logistica[Regional]
     </div>
 
-    <div class="info-item">
-      <strong>Destino</strong><br>
-      PFT 1302[Regional]
+    <p class="doc-description">
+      Relacionamento temporal da base de devoluções.
+    </p>
+
+    <div class="info-group">
+
+      <div class="info-item">
+        <strong>Origem</strong><br>
+        DimCalendario[Date]
+      </div>
+
+      <div class="info-item">
+        <strong>Destino</strong><br>
+        PEX 1031[Data]
+      </div>
+
     </div>
 
-    <div class="info-item">
-      <strong>Filtro</strong><br>
-      Single
-    </div>
+  </section>
 
-  </div>
-
-  <h3>Objetivo</h3>
-
-  <p>
-    Permitir análises regionais da operação.
-  </p>
-
-</section>
-
-<!-- RELACIONAMENTO -->
-
-<section class="doc-card">
-
-  <div class="doc-header">
-
-    <h2>DimClientes → PEX 1031</h2>
-
-    <span class="doc-badge">
-      1:N
-    </span>
-
-  </div>
-
-  <p class="doc-description">
-    Relacionamento entre clientes e devoluções.
-  </p>
-
-  <div class="info-group">
-
-    <div class="info-item">
-      <strong>Origem</strong><br>
-      DimClientes[CNPJ-LOJA]
-    </div>
-
-    <div class="info-item">
-      <strong>Destino</strong><br>
-      PEX 1031[ID CNPJ+LOJA]
-    </div>
-
-    <div class="info-item">
-      <strong>Filtro</strong><br>
-      Single
-    </div>
-
-  </div>
-
-  <h3>Objetivo</h3>
-
-  <p>
-    Relacionar devoluções aos clientes.
-  </p>
-
-</section>
-
-<!-- RELACIONAMENTO -->
-
-<section class="doc-card">
-
-  <div class="doc-header">
-
-    <h2>DimCalendario → PEX 1031</h2>
-
-    <span class="doc-badge">
-      1:N
-    </span>
-
-  </div>
-
-  <p class="doc-description">
-    Relacionamento temporal da tabela de devoluções.
-  </p>
-
-  <div class="info-group">
-
-    <div class="info-item">
-      <strong>Origem</strong><br>
-      DimCalendario[Date]
-    </div>
-
-    <div class="info-item">
-      <strong>Destino</strong><br>
-      PEX 1031[Data]
-    </div>
-
-    <div class="info-item">
-      <strong>Filtro</strong><br>
-      Single
-    </div>
-
-  </div>
-
-  <h3>Objetivo</h3>
-
-  <p>
-    Permitir análises temporais de devolução.
-  </p>
-
-</section>
+</div>
 
   </main>
+
+  <script>
+
+    function showTab(tabId, event) {
+
+      const tabs =
+        document.querySelectorAll(".tab-content");
+
+      tabs.forEach(tab => {
+
+        tab.classList.remove("active-tab");
+
+      });
+
+      document
+        .getElementById(tabId)
+        .classList.add("active-tab");
+
+      const buttons =
+        document.querySelectorAll(".tab-btn");
+
+      buttons.forEach(btn => {
+
+        btn.classList.remove("active");
+
+      });
+
+      event.target.classList.add("active");
+
+    }
+
+  </script>
 
 </body>
 
