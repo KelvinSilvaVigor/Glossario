@@ -1,92 +1,945 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <title>Medidas DAX</title>
-
-  <link rel="stylesheet" href="style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medidas DAX</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<main class="doc-page">
+<a href="index.html" class="back-btn">← Voltar</a>
+<h1>📊 Medidas DAX</h1>
+<p class="subtitle">Documentação das medidas do modelo.</p>
 
-  <main class="doc-page">
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">01 - Faturamento</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 01 - Faturamento.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>SUM('PFT 1302'[VALOR_NOTA])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-    <a href="index.html"
-       class="back-btn">
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">02 - Valor 1031</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 02 - Valor 1031.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>SUM('PEX 1031'[VALOR])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-      ← Voltar
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">03 - Valor Retorno</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 03 - Valor Retorno.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>CALCULATE(
+    SUM('PEX 1031'[VALOR]),
+    'PEX 1031'[TIPO] = "P",
+    'PEX 1031'[SIT] = "FIM"
+)
++
+CALCULATE(
+    SUM('PEX 1031'[VALOR]),
+    'PEX 1031'[TIPO] = "T",
+    'PEX 1031'[SIT] = "REC")
+  </code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-    </a>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">04 - Retorno</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 04 - Retorno.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE([03 - Valor Retorno],[01 - Faturamento])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-    <h1>📊 Medidas DAX</h1>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">09 - Vsenhas</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 09 - Vsenhas.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>SUM('PEX 1031'[VALOR])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-    <p class="subtitle">
-      Medidas e KPIs utilizados no ambiente.
-    </p>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">10 - Volume senhas</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 10 - Volume senhas.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DISTINCTCOUNT('PEX 1031'[SENHA])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-    <!-- CARD -->
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">11 - %senhas VTotal</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 11 - %senhas VTotal.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE(
+    [12 - SEM CAN],
+    CALCULATE(
+        [09 - Vsenhas],
+        ALLEXCEPT('PEX 1031', 'DimCalendario'[Data])
+    )
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-    <section class="doc-card">
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">12 - SEM CAN</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 12 - SEM CAN.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>CALCULATE(
+    SUM('PEX 1031'[VALOR]),
+    'PEX 1031'[SIT] <> "CAN"
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-      <div class="doc-header">
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Card Data Atualizado</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Card Data Atualizado.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>var _valor = SELECTEDVALUE(dTime[Data Atualizado2])
+var _dia = FORMAT(_valor, "DD/MMMM")
+var _hora = FORMAT(HOUR(_valor), "00")
+var _minuto = FORMAT(MINUTE(_valor), "00")
+RETURN
+_dia & " " &_hora & "h" & _minuto</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-        <h2>Receita Líquida</h2>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">13 - Peso 1031</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 13 - Peso 1031.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>SUM('PEX 1031'[PESO])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-        <span class="doc-badge">
-          DAX
-        </span>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">11 - %senhas QTotal</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 11 - %senhas QTotal.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE(
+    [12 - QSEM CAN],
+    CALCULATE(
+        [10 - Volume senhas],
+        ALLEXCEPT('PEX 1031', 'DimCalendario'[Data])
+    )
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-      </div>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">12 - QSEM CAN</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 12 - QSEM CAN.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>CALCULATE(
+    DISTINCTCOUNT('PEX 1031'[SENHA]),
+    'PEX 1031'[SIT] <> "CAN"
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-      <p class="doc-description">
-        Calcula faturamento líquido.
-      </p>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">%GeralV</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida %GeralV.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE(
+    [09 - Vsenhas],
+    CALCULATE([09 - Vsenhas], ALL('DimClientes'[BANDEIRA]))
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-      <div class="info-group">
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">16 - ticket médio</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 16 - ticket médio.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE([09 - Vsenhas],[10 - Volume senhas])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-        <div class="info-item">
-          <strong>Categoria</strong><br>
-          Financeiro
-        </div>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">% Acumulado</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida % Acumulado.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>VAR RankingCliente =
+    RANKX(
+        ALLSELECTED('DimClientes'[BANDEIRA]),
+        [%GeralV],
+        ,
+        DESC
+    )
+RETURN
+CALCULATE(
+    SUMX(
+        TOPN(
+            RankingCliente,
+            ALLSELECTED('DimClientes'[BANDEIRA]),
+            [%GeralV],
+            DESC
+        ),
+        [%GeralV]
+    )
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-        <div class="info-item">
-          <strong>Usada em</strong><br>
-          Dashboard Comercial
-        </div>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Classe Cliente</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Classe Cliente.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>SWITCH(
+    TRUE(),
+    [%GeralV] >= 0.05, "🔴",
+    [%GeralV] >= 0.02, "🟠",
+    [%GeralV] >= 0.01, "🟡",
+    "⚪️"
+    //"🟢"
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-      </div>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Resumo Dashboard</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Resumo Dashboard.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>VAR TotalValor = [09 - Vsenhas]
+VAR TotalVolume = [10 - Volume senhas]
+VAR TicketMedio = [16 - ticket médio]
 
-      <h3>Fórmula</h3>
+VAR BandeiraTop =
+TOPN(
+    1,
+    ALL('DimClientes'[BANDEIRA]),
+    [09 - Vsenhas],
+    DESC
+)
 
-      <code class="big-code">
+VAR NomeBandeira =
+MAXX(BandeiraTop, 'DimClientes'[BANDEIRA])
 
-Receita Líquida =
-SUM(Vendas[Valor]) -
-SUM(Vendas[Imposto])
+VAR PercBandeira =
+MAXX(BandeiraTop, [%GeralV])
 
-      </code>
+VAR RetornoBandeiraTop =
+    CALCULATE(
+        [09 - Vsenhas],
+        BandeiraTop
+    )
 
-      <h3>Regras</h3>
+VAR FaturamentoBandeiraTop =
+    CALCULATE(
+        [01 - Faturamento],
+        BandeiraTop
+    )
 
-      <ul>
+VAR PercSobreFaturamento =
+    DIVIDE(RetornoBandeiraTop, FaturamentoBandeiraTop)
 
-        <li>Ignora devoluções</li>
+RETURN
+"Foram registradas "
+& FORMAT(TotalVolume,"#,##0")
+& " senhas, totalizando "
+& FORMAT(TotalValor,"R$ #,##0")
+& " em retornos. Ticket médio de "
+& FORMAT(TicketMedio,"R$ #,##0")
+& ". A bandeira com maior impacto é "
+& NomeBandeira
+& ", representando "
+& FORMAT(PercBandeira,"0.00%")
+& " do total, e seu retorno equivale a "
+& FORMAT(PercSobreFaturamento,"0.00%")
+& " do faturamento próprio."</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-        <li>Não considera canceladas</li>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Classe Valor</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Classe Valor.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>SWITCH(
+    TRUE(),
+    [09 - Vsenhas] >= 0.05, "🔴",
+    [09 - Vsenhas] >= 0.02, "🟠",
+    [09 - Vsenhas] >= 0.01, "🟡",
+    "🟢"
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-      </ul>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">18 - transp</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 18 - transp.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DISTINCTCOUNT('PEX 1031'[NMTRANSP])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-    </section>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">% Acumulado Transp</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida % Acumulado Transp.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>VAR RankingCliente =
+    RANKX(
+        ALLSELECTED('PEX 1031'[NMTRANSP]),
+        [%GeralT],
+        ,
+        DESC
+    )
+RETURN
+CALCULATE(
+    SUMX(
+        TOPN(
+            RankingCliente,
+            ALLSELECTED('PEX 1031'[NMTRANSP]),
+            [%GeralT],
+            DESC
+        ),
+        [%GeralT]
+    )
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
-  </main>
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">%GeralT</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida %GeralT.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE(
+    [09 - Vsenhas],
+    CALCULATE([09 - Vsenhas], ALL('PEX 1031'[NMTRANSP]))
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
 
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Romaneios</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Romaneios.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DISTINCTCOUNT('PFT 1302'[ROMANEIO])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Resumo Top 3</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Resumo Top 3.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>VAR Top3Clientes =
+    TOPN(
+        3,
+        ADDCOLUMNS(
+            VALUES(DimClientes[BANDEIRA]),
+            "Valor", [09 - Vsenhas]
+        ),
+        [Valor], DESC
+    )
+
+RETURN
+"Top 3 clientes de retorno
+
+"
+&
+CONCATENATEX(
+    Top3Clientes, 
+    'DimClientes'[BANDEIRA] & " " & FORMAT([Valor], "- R$ #,##0"),
+    UNICHAR(10),
+    [Valor], DESC
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Qtd de Caixas</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Qtd de Caixas.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>SUM('PEX 1031'[QTDE])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">% Fat-ret</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida % Fat-ret.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE([09 - Vsenhas],[01 - Faturamento])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">% Retorno sobre Faturamento Bandeira</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida % Retorno sobre Faturamento Bandeira.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE(
+    [09 - Vsenhas],          -- retorno
+    [01 - Faturamento]   -- total da bandeira
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Faturamento Bandeira</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Faturamento Bandeira.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>CALCULATE(SUM('PFT 1302'[VALOR_NOTA]), DimClientes[BANDEIRA])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">% Retorno Cliente Top</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida % Retorno Cliente Top.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>VAR ClienteTop =
+    TOPN(
+        1,
+        ALL('PEX 1031'[CLIENTE]),
+        [09 - Vsenhas],
+        DESC
+    )
+
+VAR RetornoClienteTop =
+    CALCULATE(
+        [09 - Vsenhas],
+        ClienteTop
+    )
+
+VAR FaturamentoClienteTop =
+    CALCULATE(
+        [01 - Faturamento],
+        ClienteTop
+    )
+
+RETURN
+DIVIDE(RetornoClienteTop, FaturamentoClienteTop)
+</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">%C Acumulado</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida %C Acumulado.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>VAR RankingCliente =
+    RANKX(
+        ALLSELECTED('PEX 1031'[CLIENTE]),
+        [%CGeralV],
+        ,
+        DESC
+    )
+RETURN
+CALCULATE(
+    SUMX(
+        TOPN(
+            RankingCliente,
+            ALLSELECTED('PEX 1031'[CLIENTE]),
+            [%cGeralV],
+            DESC
+        ),
+        [%cGeralV]
+    )
+)
+</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">%CGeralV</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida %CGeralV.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE(
+    [09 - Vsenhas],
+    CALCULATE([09 - Vsenhas], ALL('PEX 1031'[CLIENTE]))
+)
+</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">05 - Senhas em Aberto</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 05 - Senhas em Aberto.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>CALCULATE(
+    SUM('PEX 1031'[VALOR]),
+    'PEX 1031'[TIPO] = "P",
+    'PEX 1031'[SIT] = "REC"
+)
++
+CALCULATE(
+    SUM('PEX 1031'[VALOR]),
+    'PEX 1031'[TIPO] = "T",
+    'PEX 1031'[SIT] = "IN"
+)
++
+CALCULATE(
+    SUM('PEX 1031'[VALOR]),
+    'PEX 1031'[TIPO] = "P",
+    'PEX 1031'[SIT] = "IN"
+)
+</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">06 - Senhas CAN</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 06 - Senhas CAN.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>CALCULATE(
+    SUM('PEX 1031'[VALOR]),
+    'PEX 1031'[SIT] = "CAN"
+)
+</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">07 aberto + finalizado</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 07 aberto + finalizado.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>[05 - Senhas em Aberto]+[03 - Valor Retorno]</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Retorno % Projeção</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Retorno % Projeção.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>CALCULATE(
+    DIVIDE([07 aberto + finalizado],[01 - Faturamento]))</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Sit Retorno</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Sit Retorno.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>IF([04 - Retorno]> 3.6, "🔴","🟢")</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">00 - Retorno</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 00 - Retorno.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE([03 - Valor Retorno],[01 - Faturamento])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Insight_Retorno</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Insight_Retorno.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>VAR TabelaBase =
+    ADDCOLUMNS(
+        ALLSELECTED('PEX 1031'[CAUSA_AGRUPADA]),
+        "Valor", [03 - Valor Retorno]
+    )
+
+VAR Total =
+    SUMX(TabelaBase, [Valor])
+
+VAR TabelaRank =
+    ADDCOLUMNS(
+        TabelaBase,
+        "Rank",
+            RANKX(TabelaBase, [Valor], , DESC),
+        "Acum",
+            VAR RankAtual = RANKX(TabelaBase, [Valor], , DESC)
+            RETURN
+                DIVIDE(
+                    SUMX(
+                        FILTER(TabelaBase, RANKX(TabelaBase, [Valor], , DESC) <= RankAtual),
+                        [Valor]
+                    ),
+                    Total
+                )
+    )
+
+VAR Top1 =
+    TOPN(1, TabelaBase, [Valor], DESC)
+
+VAR NomeTop =
+    MAXX(Top1, 'PEX 1031'[CAUSA_AGRUPADA])
+
+VAR ValorTop =
+    MAXX(Top1, [Valor])
+
+VAR Ate80 =
+    FILTER(TabelaRank, [Acum] <= 0.8)
+
+VAR Qt =
+    COUNTROWS(Ate80)
+
+VAR Perc =
+    MAXX(Ate80, [Acum])
+
+RETURN
+FORMAT(Perc, "0%") &
+" do retorno vem de " &
+Qt &
+" causas, lideradas por " &
+NomeTop &
+" (" & FORMAT(ValorTop, "R$ #,##0") & ")."
+</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Insight_Variacao</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Insight_Variacao.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>VAR Vari = [Var_%]
+VAR Causa = [Top_Causa_Atual]
+
+RETURN
+SWITCH(
+    TRUE(),
+    
+    Vari > 0.05,
+    "🔴 Retorno subiu " & FORMAT(Vari, "+0%") & 
+    " vs última semana (D-7), puxado por " & Causa,
+
+    Vari < -0.05,
+    "🟢 Retorno caiu " & FORMAT(Vari, "0%") & 
+    " vs última semana (D-7), com melhora em " & Causa,
+
+    "🟡 Retorno estável (" & FORMAT(Vari, "0%") & 
+    " vs última semana)"
+)
+</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Retorno_Anterior</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Retorno_Anterior.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>CALCULATE(
+    [03 - Valor Retorno],
+    DATEADD(DimCalendario[Data], -7, DAY)
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Var_%</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Var_%.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE(
+    [03 - Valor Retorno] - [Retorno_Anterior],
+    [Retorno_Anterior]
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Top_Causa_Atual</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Top_Causa_Atual.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>MAXX(
+    TOPN(1, ALLSELECTED('PEX 1031'[CAUSA_AGRUPADA]), [03 - Valor Retorno], DESC),
+    'PEX 1031'[CAUSA_AGRUPADA]
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">04 - Retorno geral</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida 04 - Retorno geral.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE([09 - Vsenhas],[01 - Faturamento])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Retorno % por Transportador</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Retorno % por Transportador.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE(
+    CALCULATE(
+        SUM('PEX 1031'[VALOR]),
+        ALLEXCEPT(DimTransportador, DimTransportador[NOM_TRANSPORTADOR_VIGOR_1])
+    ),
+    CALCULATE(
+        SUM('PFT 1302'[VALOR_NOTA]),
+        ALLEXCEPT(DimTransportador, DimTransportador[NOM_TRANSPORTADOR_VIGOR_1])
+    ),
+    0
+)</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+<details class="measure-card">
+  <summary>
+    <span class="measure-title">Ret Geral</span>
+    <span class="doc-badge">DAX</span>
+  </summary>
+  <div class="measure-content">
+    <p class="doc-description">Documentação da medida Ret Geral.</p>
+    <h3>Fórmula DAX</h3>
+    <pre class="big-code"><code>DIVIDE([09 - Vsenhas],[01 - Faturamento])</code></pre>
+    <h3>Observações</h3>
+    <p>Preencher regra de negócio e observações.</p>
+  </div>
+</details>
+
+</main>
 </body>
-
 </html>
