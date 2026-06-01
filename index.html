@@ -1,144 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Glossário Power BI</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Hub Power BI</title>
 
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
   <header class="hero">
 
+    <img src="img/logo-vigor.png"
+         class="logo-vigor"
+         alt="Vigor">
+
     <div>
-      <p class="tag">📘 Base de conhecimento Power BI</p>
+        <p class="tag">
+            📘 Base de conhecimento Power BI
+        </p>
 
-      <h1>Glossário Power BI</h1>
+        <h1>Hub Power BI</h1>
 
-      <p class="subtitle">
-        Conceitos, funções DAX, modelagem, Power Query e boas práticas.
-      </p>
+        <p class="subtitle">
+            Documentação técnica do ambiente Power BI.
+        </p>
     </div>
 
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Buscar termo..."
-    />
-
-  </header>
+</header>
 
   <main>
 
-    <section class="filters">
+    <section class="grid">
 
-      <button class="filter active">Todos</button>
-      <button class="filter">DAX</button>
-      <button class="filter">Modelagem</button>
-      <button class="filter">Power Query</button>
-      <button class="filter">Visualização</button>
+      <!-- TABELAS -->
+
+      <a href="tabelas.html"
+         class="card nav-card">
+
+        <div class="card-icon">
+          📦
+        </div>
+
+        <h2>Tabelas</h2>
+
+        <p class="description">
+          Estrutura, fontes, chaves e relacionamentos.
+        </p>
+
+      </a>
+
+      <!-- MEDIDAS -->
+
+      <a href="medidas.html"
+         class="card nav-card">
+
+        <div class="card-icon">
+          📊
+        </div>
+
+        <h2>Medidas DAX</h2>
+
+        <p class="description">
+          Fórmulas, KPIs e regras de negócio.
+        </p>
+
+      </a>
+
+      <!-- RELACIONAMENTOS -->
+
+      <a href="relacionamentos.html"
+         class="card nav-card">
+
+        <div class="card-icon">
+          🔗
+        </div>
+
+        <h2>Relacionamentos</h2>
+
+        <p class="description">
+          Estrutura do modelo dimensional.
+        </p>
+
+      </a>
+
+      <!-- POWER QUERY -->
+
+      <a href="powerquery.html"
+         class="card nav-card">
+
+        <div class="card-icon">
+          ⚡
+        </div>
+
+        <h2>Power Query</h2>
+
+        <p class="description">
+          ETL, merges e transformações.
+        </p>
+
+      </a>
 
     </section>
 
-    <section class="grid">
+  </main>
 
-  <!-- TABELAS -->
+</body>
 
-  <a href="tabelas.html" class="card nav-card">
-
-    <div class="card-icon">
-      📦
-    </div>
-
-    <h2>Tabelas</h2>
-
-    <p class="description">
-      Fontes de dados, colunas, chaves, regras e atualização.
-    </p>
-
-  </a>
-
-  <!-- MEDIDAS -->
-
-  <a href="medidas.html" class="card nav-card">
-
-    <div class="card-icon">
-      📊
-    </div>
-
-    <h2>Medidas DAX</h2>
-
-    <p class="description">
-      Todas as medidas, fórmulas, objetivos e dashboards utilizados.
-    </p>
-
-  </a>
-
-  <!-- RELACIONAMENTOS -->
-
-  <a href="relacionamentos.html" class="card nav-card">
-
-    <div class="card-icon">
-      🔗
-    </div>
-
-    <h2>Relacionamentos</h2>
-
-    <p class="description">
-      Estrutura do modelo, cardinalidade e direção de filtros.
-    </p>
-
-  </a>
-
-  <!-- POWER QUERY -->
-
-  <a href="powerquery.html" class="card nav-card">
-
-    <div class="card-icon">
-      ⚡
-    </div>
-
-    <h2>Power Query</h2>
-
-    <p class="description">
-      Transformações, merges, tratamentos e etapas ETL.
-    </p>
-
-  </a>
-
-  <!-- KPIS -->
-
-  <a href="kpis.html" class="card nav-card">
-
-    <div class="card-icon">
-      📈
-    </div>
-
-    <h2>KPIs</h2>
-
-    <p class="description">
-      Indicadores de negócio, regras e cálculos estratégicos.
-    </p>
-
-  </a>
-
-  <!-- REGRAS -->
-
-  <a href="regras.html" class="card nav-card">
-
-    <div class="card-icon">
-      🧠
-    </div>
-
-    <h2>Regras de Negócio</h2>
-
-    <p class="description">
-      Definições usadas nos dashboards e padronizações.
-    </p>
-
-  </a>
-
-</section>
+</html>
