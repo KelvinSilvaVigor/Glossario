@@ -496,3 +496,28 @@ overflow-x: auto;
 
 color: #93c5fd;
 }
+
+.hero {
+
+  position: relative;
+
+  padding-bottom: 80px;
+}
+
+.hero::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  radial-gradient(
+    circle at top right,
+    rgba(0,87,184,0.05),
+    transparent 60%
+  );
+
+  pointer-events: none;
+}
