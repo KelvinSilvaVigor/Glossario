@@ -6,13 +6,20 @@
 
 body {
 
-background: #f5f7fb;
+  background:
+  radial-gradient(
+    circle at top right,
+    rgba(0,87,184,.05),
+    transparent 40%
+  ),
 
-color: #0f172a;
+  radial-gradient(
+    circle at bottom left,
+    rgba(0,87,184,.03),
+    transparent 45%
+  ),
 
-font-family: "Segoe UI", sans-serif;
-
-padding: 60px;
+  #f5f7fb;
 }
 
 /* HERO */
@@ -580,4 +587,33 @@ html,
 body {
 
   overflow-x: hidden;
+}
+
+.hero-info {
+
+  display: flex;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  margin-top: 25px;
+}
+
+.hero-badge {
+
+  background: white;
+
+  border: 1px solid #dbe5f0;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  color: #0057b8;
+
+  font-weight: 600;
+
+  box-shadow:
+  0 4px 15px rgba(15,23,42,.05);
 }
