@@ -94,13 +94,14 @@ max-width: 700px;
 
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  grid-template-columns:
+  repeat(2, minmax(400px, 550px));
 
-  gap: 32px;
+  justify-content: center;
 
-  max-width: 1200px;
+  gap: 24px;
 
-  margin: 0 auto 60px;
+  margin-bottom: 50px;
 }
 
 /* LINKS */
@@ -122,9 +123,9 @@ color: inherit;
 
   border-radius: 28px;
 
-  padding: 32px;
+  padding: 24px;
 
-  height: 430px;
+  min-height: 220px;
 
   display: flex;
 
@@ -146,23 +147,23 @@ box-shadow:
 
 .card-icon {
 
-width: 80px;
+  width: 60px;
 
-height: 80px;
+  height: 60px;
 
-display: flex;
+  display: flex;
 
-align-items: center;
+  align-items: center;
 
-justify-content: center;
+  justify-content: center;
 
-background: #eef4fb;
+  background: #eef4fb;
 
-border-radius: 24px;
+  border-radius: 18px;
 
-font-size: 40px;
+  font-size: 30px;
 
-margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .card h2 {
