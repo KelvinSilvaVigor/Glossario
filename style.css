@@ -26,24 +26,26 @@ margin-bottom: 60px;
 
 .hero::after {
 
-content: "";
+  content: "";
 
-position: absolute;
+  position: absolute;
 
-inset: -150px -150px auto auto;
+  top: -100px;
 
-width: 500px;
+  right: -100px;
 
-height: 500px;
+  width: 400px;
 
-background:
-radial-gradient(
-circle,
-rgba(0,87,184,0.08),
-transparent 70%
-);
+  height: 400px;
 
-pointer-events: none;
+  background:
+  radial-gradient(
+    circle,
+    rgba(0,87,184,0.08),
+    transparent 70%
+  );
+
+  pointer-events: none;
 }
 
 .logo {
@@ -95,13 +97,11 @@ max-width: 700px;
   display: grid;
 
   grid-template-columns:
-  repeat(2, minmax(400px, 550px));
-
-  justify-content: center;
+  repeat(2, 1fr);
 
   gap: 24px;
 
-  margin-bottom: 50px;
+  width: 100%;
 }
 
 /* LINKS */
@@ -576,4 +576,10 @@ grid-template-columns:
 
 }
 
+}
+
+html,
+body {
+
+  overflow-x: hidden;
 }
