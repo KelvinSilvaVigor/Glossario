@@ -115,26 +115,24 @@ color: inherit;
 
 .card {
 
-background: white;
+  background: white;
 
-border: 1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
 
-border-radius: 28px;
+  border-radius: 28px;
 
-padding: 32px;
+  padding: 32px;
 
-min-height: 320px;
+  height: 430px;
 
-display: flex;
+  display: flex;
 
-flex-direction: column;
+  flex-direction: column;
 
-justify-content: flex-start;
+  transition: .3s;
 
-transition: .3s;
-
-box-shadow:
-0 10px 30px rgba(15,23,42,0.05);
+  box-shadow:
+  0 10px 30px rgba(15,23,42,0.05);
 }
 
 .card:hover {
@@ -168,18 +166,26 @@ margin-bottom: 24px;
 
 .card h2 {
 
-font-size: 30px;
+  font-size: 30px;
 
-color: #082f6b;
+  color: #082f6b;
 
-margin-bottom: 14px;
+  min-height: 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  margin-bottom: 14px;
 }
 
 .description {
 
-color: #64748b;
+  color: #64748b;
 
-line-height: 1.7;
+  line-height: 1.7;
+
+  margin-top: auto;
 }
 
 /* DOCUMENTAÇÃO */
