@@ -113,12 +113,13 @@ max-width: 700px;
 
   display: grid;
 
-  grid-template-columns:
-  repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
-  gap: 24px;
+  gap: 32px;
 
-  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto 40px auto;
 }
 
 /* LINKS */
@@ -543,9 +544,11 @@ flex-direction: column;
 
   border-radius: 28px;
 
-  padding: 32px;
+  padding: 40px;
 
-  margin-top: 24px;
+  margin: 0 auto 40px auto;
+
+  max-width: 1400px;
 
   box-shadow:
   0 10px 30px rgba(15,23,42,0.05);
