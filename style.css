@@ -598,17 +598,17 @@ body::before {
 
   position: fixed;
 
-  top: -35%;
+  top: -300px;
 
-  right: -15%;
+  right: -400px;
 
-  width: 1200px;
+  width: 1400px;
 
-  height: 1200px;
+  height: 1400px;
 
   border-radius: 50%;
 
-  border: 70px solid rgba(0,87,184,0.025);
+  border: 60px solid rgba(0,87,184,0.04);
 
   pointer-events: none;
 
@@ -621,17 +621,17 @@ body::after {
 
   position: fixed;
 
-  top: -15%;
+  top: -150px;
 
-  right: 5%;
+  right: -150px;
 
-  width: 900px;
+  width: 1000px;
 
-  height: 900px;
+  height: 1000px;
 
   border-radius: 50%;
 
-  border: 50px solid rgba(0,87,184,0.02);
+  border: 40px solid rgba(0,87,184,0.03);
 
   pointer-events: none;
 
